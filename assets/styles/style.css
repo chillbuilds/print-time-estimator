@@ -1,0 +1,35 @@
+body {
+    background: #EF476F;
+}
+
+#page-head {
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+    background: #4169e1;
+    color: white;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+input {
+    width: 20%;
+    border-radius: 4px;
+    margin-right: 8px;
+    font-weight: 600;
+
+    background: rgb(57, 92, 197);
+}
+
+.inputs {
+    font-weight: 600;
+    margin: 8px;
+    background: royalblue;
+    padding: 8px;
+    border-radius: 4px;
+
+}
+
+h2 {
+    margin-bottom: 40px;
+}
