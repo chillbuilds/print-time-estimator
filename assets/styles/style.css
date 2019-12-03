@@ -37,9 +37,10 @@ h2 {
     color: rgba(0, 0, 0, .5);
 }
 
-#calculate {
-    margin-left: 44%;
+.pageBtn {
     margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
     background: royalblue;
     color: white;
     font-size: 24px;
@@ -48,4 +49,18 @@ h2 {
     border: none;
     border-radius: 4px;
     border-bottom: 4px solid rgb(57, 92, 197);
+}
+
+
+#btnContainer {
+position: relative;
+margin-left: 30%;
+}
+
+#estimate {
+    margin-top: 20px;
+}
+
+#estTxt {
+    margin-top: 20px;
 }

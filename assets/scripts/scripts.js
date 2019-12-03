@@ -1,6 +1,6 @@
 var products = [
-  { name: "Credenza", material: "wood", multiplier: 1 },
-  { name: "Round Table", material: "wood", multiplier: 1 },
+  { name: "Credenza", material: "wood", multiplier: 300 },
+  { name: "Round Table", material: "wood", multiplier: 100 },
   { name: "Coffee Table", material: "wood", multiplier: 1 },
   { name: "Round Side", material: "wood", multiplier: 1 },
   { name: "Square Side", material: "wood", multiplier: 1 },
@@ -35,27 +35,34 @@ var totalSeconds = 0;
 
 //loop through and populate "#wood" div
 for (var i = 0; i < products.length; i++) {
+    var product = $("<div>");
+    product.addClass("inputs");
   if (products[i].material === "wood") {
-    var wood = $("<div>");
-    wood.addClass("inputs");
-    wood.html('<input type="number" id="wood-' + i + '">' + products[i].name);
-    $("#wood").append(wood);
+    product.html('<input type="number" id="wood-' + i + '">' + products[i].name);
+    $("#wood").append(product);
   } else if (products[i].material === "vinyl") {
-    var vinyl = $("<div>");
-    vinyl.addClass("inputs");
-    vinyl.html('<input type="number" id="vinyl-' + i + '">' + products[i].name);
-    $("#vinyl").append(vinyl);
-  }else{  var misc = $("<div>");
-  misc.addClass("inputs");
-  misc.html('<input type="number" id="misc-' + i + '">' + products[i].name);
-  $("#misc").append(misc);}
+    product.html('<input type="number" id="vinyl-' + i + '">' + products[i].name);
+    $("#vinyl").append(product);
+  }else{
+  product.html('<input type="number" id="misc-' + i + '">' + products[i].name);
+  $("#misc").append(product);}
 }
+
 
 //record each value and apply multiplier, and add all values together
 $("#calculate").on("click", function() {
+  totalSeconds = 0;
   for (var i = 0; i < products.length; i++) {
-    var x = products[i].material + "-" + i;
-    var y = $("#" + x).attr("id");
-    console.log(y);
+    var divId = products[i].material + "-" + i;
+    var multiplier = products[i].multiplier;
+    var x = $("#" + divId).val();
+    var input = parseInt(x);
+    if(input > 0){totalSeconds = totalSeconds + (input*multiplier);}
   }
+  
+  const formatted = moment.utc(totalSeconds*1000).format('HH:mm:ss');
+  console.log(formatted);
+  var j = formatted.split(":")
+  console.log(j);
+  $("#estimate").text(j[0]+"hrs "+j[1]+"mins");
 });
