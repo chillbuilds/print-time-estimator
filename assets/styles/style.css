@@ -9,7 +9,7 @@ body {
     background: #4169e1;
     color: white;
     padding: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 input {
@@ -17,19 +17,35 @@ input {
     border-radius: 4px;
     margin-right: 8px;
     font-weight: 600;
-
+    color: white;
+    border: none;
     background: rgb(57, 92, 197);
 }
 
 .inputs {
     font-weight: 600;
-    margin: 8px;
+    color: white;
     background: royalblue;
     padding: 8px;
+    border-bottom: 2px solid rgb(57, 92, 197);
     border-radius: 4px;
-
 }
 
 h2 {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgba(0, 0, 0, .5);
+}
+
+#calculate {
+    margin-left: 44%;
+    margin-top: 20px;
+    background: royalblue;
+    color: white;
+    font-size: 24px;
+    padding: 10px 40px;
+    padding-bottom: 6px;
+    border: none;
+    border-radius: 4px;
+    border-bottom: 4px solid rgb(57, 92, 197);
 }
