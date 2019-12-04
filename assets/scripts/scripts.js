@@ -58,7 +58,6 @@ $("#calculate").on("click", function() {
     var input = parseInt(x);
     if(input > 0){totalSeconds = totalSeconds + (input*multiplier);}
   }
-  alert(totalSeconds);
   const formatted = moment.utc(totalSeconds*1000).format('HH:mm:ss');
   var timeArr = formatted.split(":")
   $("#estimate").text(timeArr[0]+"hrs "+timeArr[1]+"mins");
