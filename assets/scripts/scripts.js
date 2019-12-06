@@ -30,7 +30,6 @@ var products = [
   { name: "Acrylic Tray Sm", material: "misc", multiplier: 1 },
   { name: "Acrylic Tray Lg", material: "misc", multiplier: 1 }
 ];
-var totalSeconds = 0;
 
 //loop through and populate "#wood" div
 for (var i = 0; i < products.length; i++) {
@@ -47,10 +46,9 @@ for (var i = 0; i < products.length; i++) {
   $("#misc").append(product);}
 }
 
-
 //record each value and apply multiplier, and add all values together
 $("#calculate").on("click", function() {
-  totalSeconds = 0;
+  var totalSeconds = 0;
   for (var i = 0; i < products.length; i++) {
     var divId = "product" + "-" + i;
     var multiplier = products[i].multiplier;
